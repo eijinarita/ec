@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="script.js" defer></script>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img class="img1" src="img/rogo3.jpg">
+            <div class="humburger" id="humburger">
+                <div class="buns"></div>
+                <div class="patty"></div>
+                <div class="buns"></div>
+            </div>
+            <div class="header-right">
+                <ul class="nav">
+                    <li><p>新規登録</p></li>
+                    <li><div class = "modalOpen" id="modalOpen"><p>ログイン</p></div></li>
+                    <li><i class="fa fa-cart-plus"></i></li>
+                    <li><i class="fa fa-heart"></i></li>
+                </ul>
+            </div>
+            
+            <div class="table" id="table">
+                <ul>
+                    <li><p>新規登録</p></li>
+                    <li><div class = "open" id="open"><p>ログイン</p></div></li>
+                    <li><i class="fa fa-cart-plus"></i></li>
+                    <li><i class="fa fa-heart"></i></li>
+                    <li><div class="tableClose" id="tableClose"><i class="fa fa-window-close fa-2x"></i></div></li>
+                </ul>
+            </div>
+
+            <div class="overLay" id="overLay"></div>
+            
+            <div class="modal" id="modal">
+                <div class="modalContents">
+                    <div class="ID">
+                        <h2>ログインID</h2>
+                        <input class="loginId" id="logId">
+                    </div>
+                    <div class="pass">
+                        <h2>パスワード</h2>
+                        <input class="loginPass" id="logPass">
+                    </div>
+                    <input type="submit" class="login" id="login" value="login"></button>
+                </div>
+                <div class="modalClose" id="modalClose"><i class="fa fa-window-close fa-2x"></i></div>
+            </div>
+            <div class="mask" id="mask"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- <img class="img2" src="img/etop2.png"> -->
+
+            <div class="slideShow">
+                <img id="mainImage" class="mainImage">
+                <div id="prevImage" class="prevImage fas fa-chevron-left fa-2x"></div> 
+                <div id="nextImage" class="nextImage fas fa-chevron-right fa-2x"></div> 
+                <ul id="imagelist" class="imagelist"></ul>
+            </div>
+            
+            <div class="main-wrapper">
+                <ul class="select">
+                    <li>ladies</li>
+                    <li>mens</li>
+                    <li>kids</li>
+                    <li>sale</li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <form action="" method="post">
+                    <input type="text" id = "text" name="name" placeholder="search">
+                <form>
+                <button class = "search" name="button">
+                    <i class="fa fa-search"></i>
+                </button>
+               
+                <select class="category" id="category">
+                    <option value="sample" >sample</option>
+                    <option value="outer" >outer</option>
+                    <option value="tops" >tops</option>
+                </select>
+                <input type="button" class = "btn" id="btn" value="検索" onclick="check()"></button>
+            </div>
+
+            <div class="buy-wrapper" id="buy-wrapper">
+                <h1>PICK UP ITEMS</h1>
+                <div id="box1" class="item">
+                    <div class="sep">
+                        <img src="img/blog-ph-1.jpg">
+                        <p>サンプル</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-1.jpg">
+                        <p>サンプル</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-1.jpg">
+                        <p>サンプル</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-1.jpg">
+                        <p>サンプル</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-1.jpg">
+                        <p>サンプル</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-1.jpg">
+                        <p>サンプル</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-1.jpg">
+                        <p>サンプル</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-1.jpg">
+                        <p>サンプル</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-1.jpg">
+                        <p>サンプル</p>
+                    </div>
+                </div>
+                <div id="box2"  class = "item" style="display: none;">
+                    <div class="sep">
+                        <img src="img/blog-ph-2.jpg">
+                        <p>アウター</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-2.jpg">
+                        <p>アウター</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-2.jpg">
+                        <p>アウター</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-2.jpg">
+                        <p>アウター</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-2.jpg">
+                        <p>アウター</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-2.jpg">
+                        <p>アウター</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-2.jpg">
+                        <p>アウター</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-2.jpg">
+                        <p>アウター</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-2.jpg">
+                        <p>アウター</p>
+                    </div>
+                </div>
+                <div id="box3" class = "item" style="display: none;">
+                    <div class="sep">
+                        <img src="img/blog-ph-3.jpg">
+                        <p>トップス</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-3.jpg">
+                        <p>トップス</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-3.jpg">
+                        <p>トップス</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-3.jpg">
+                        <p>トップス</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-3.jpg">
+                        <p>トップス</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-3.jpg">
+                        <p>トップス</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-3.jpg">
+                        <p>トップス</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-3.jpg">
+                        <p>トップス</p>
+                    </div>
+                    <div class="sep">
+                        <img src="img/blog-ph-3.jpg">
+                        <p>トップス</p>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <p>sub/alternative(c)</p>
+            </footer>
+        </div>
+    </main>
+</body>
+</html>
